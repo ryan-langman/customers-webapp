@@ -1,0 +1,14 @@
+{
+  "name": "customers-app",
+  "description": "Webapp to save and search customer info.",
+  "main": "index.js",
+  "authors": [
+    "Ryan Langman <hraffnir@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "angularjs#^1.6.0"
+  }
+}
