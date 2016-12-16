@@ -22,7 +22,11 @@ var source = {
     '!public/**/*.e2e.js'
   ],
   vendor: [
-    'bower_components/angular/angular.js'
+    'bower_components/jQuery/dist/jquery.js',
+    'bower_components/bootstrap/dist/bootstrap.js',
+    'bower_components/bootstrap/js/collapse.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js'
   ]
 }
 
@@ -39,6 +43,7 @@ gulp.task('vendor', function() {
 });
 
 gulp.task('watch', function() {
+  gulp.watch(source.app, ['build']);
 });
 
 gulp.task('prod', function() {

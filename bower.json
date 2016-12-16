@@ -9,6 +9,9 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "angular": "angularjs#^1.6.0"
+    "angular": "angularjs#^1.6.0",
+    "angular-ui-router": "ui-router#^0.3.2",
+    "jQuery": "^3.1.1",
+    "bootstrap": "^3.3.7"
   }
 }
