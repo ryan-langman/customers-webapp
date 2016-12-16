@@ -1,7 +1,7 @@
 <div class="col-xs-12">
     <h3 class="text-center">Please fill in a customer's details.</h4>
 
-    <form name="form" class="form-horizontal padding-top-10" ng-submit="form.$invalid || saveUser()">
+    <form name="form" class="form-horizontal" ng-submit="form.$invalid || saveUser()">
         <div class="form-group">
             <label class="control-label col-md-2">First Name</label>
             <div class="col-md-10">
@@ -22,6 +22,19 @@
                 <div class="text-danger" ng-messages="form.surname.$error" ng-show="form.surname.$dirty">
                     <p ng-message="maxlength">Maximum length exceeded.</p>
                     <p ng-message="required">Surname is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">ID Number</label>
+            <div class="col-md-10">
+                <input ng-model="customer.idNumber" name="idNumber" type="number" class="form-control" placeholder="ID Number" ng-maxlength="13" ng-minlength="13" ng-required="true">
+
+                <div class="text-danger" ng-messages="form.idNumber.$error" ng-show="form.idNumber.$dirty">
+                    <p ng-message="maxlength">Maximum length exceeded.</p>
+                    <p ng-message="minlength">Valid ID Number is required.</p>
+                    <p ng-message="required">ID Number is required.</p>
                 </div>
             </div>
         </div>

@@ -1,3 +1,3 @@
-angular.module('customersApp.customers').controller('ListCustomersController', function(){
-    console.log('Hello from list customers controller.');
+angular.module('customersApp.customers').controller('ListCustomersController', function($scope){
+    $scope.customers = [{firstName: 'Allo!'}];
 });

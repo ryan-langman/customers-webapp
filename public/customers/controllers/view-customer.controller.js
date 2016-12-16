@@ -1,4 +1,4 @@
-angular.module('customersApp.customers').controller('AddCustomersController', function($scope){
+angular.module('customersApp.customers').controller('ViewCustomerController', function($scope){
     $scope.customer = {};
 
     $scope.save = function(){

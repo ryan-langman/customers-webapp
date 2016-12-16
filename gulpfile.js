@@ -5,9 +5,6 @@ var fs = require('fs');
 
 var source = {
   app: [
-    // Include bootstrapper first
-    'public/main.js',
-
     // Include main app declaration
     'public/app.js',
 

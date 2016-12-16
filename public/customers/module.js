@@ -17,8 +17,13 @@ angular.module('customersApp.customers', ['ui.router']).config(function($statePr
         })
         .state('app.customers.add', {
             url: '/add',
-            templateUrl: 'customers/views/add-customers.html',
-            controller: 'AddCustomersController'
+            templateUrl: 'customers/views/customer.html',
+            controller: 'AddCustomerController'
+        })
+        .state('app.customers.view', {
+            url: '/view/:customer_id',
+            templateUrl: 'customers/views/customer.html',
+            controller: 'ViewCustomerController'
         });
 
 });
