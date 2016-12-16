@@ -3,7 +3,10 @@ $(function () {
 });
 
 angular.module('customersApp', [
+    'ngMessages',
+
     'ui.router',
+    'ui.mask',
 
     'customersApp.home',
     'customersApp.customers'

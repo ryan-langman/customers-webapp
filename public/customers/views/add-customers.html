@@ -1,1 +1,73 @@
-<a ui-sref="app.customers.list">Go to list</a>
+<div class="col-xs-12">
+    <h3 class="text-center">Please fill in a customer's details.</h4>
+
+    <form name="form" class="form-horizontal padding-top-10" ng-submit="form.$invalid || saveUser()">
+        <div class="form-group">
+            <label class="control-label col-md-2">First Name</label>
+            <div class="col-md-10">
+                <input ng-model="customer.firstName" name="firstName" type="text" class="form-control" placeholder="First Name" ng-maxlength="25" ng-required="true">
+
+                <div class="text-danger" ng-messages="form.firstName.$error" ng-show="form.firstName.$dirty">
+                    <p ng-message="maxlength">Maximum length exceeded.</p>
+                    <p ng-message="required">First Name is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Surname</label>
+            <div class="col-md-10">
+                <input ng-model="customer.surname" name="surname" type="text" class="form-control" placeholder="Surname" ng-maxlength="25" ng-required="true">
+
+                <div class="text-danger" ng-messages="form.surname.$error" ng-show="form.surname.$dirty">
+                    <p ng-message="maxlength">Maximum length exceeded.</p>
+                    <p ng-message="required">Surname is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <div class="col-md-10">
+                <input ng-model="customer.email" name="email" type="email" class="form-control" placeholder="Email" ng-maxlength="50">
+
+                <div class="text-danger" ng-messages="form.email.$error" ng-show="form.email.$dirty">
+                    <p ng-message="maxlength">Maximum length exceeded.</p>
+                    <p ng-message="required">Email is required.</p>
+                    <p ng-message="email">Please enter a valid email address.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Phone Number</label>
+            <div class="col-md-10">
+                <input ng-model="customer.phoneNumber" ui-mask="999-999-9999" name="phoneNumber" type="text" class="form-control" ng-required="true">
+
+                <div class="text-danger" ng-messages="form.phoneNumber.$error" ng-show="form.phoneNumber.$dirty">
+                    <p ng-message="required">Phone Number is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Address</label>
+            <div class="col-md-10">
+                <input ng-model="customer.address" name="address" type="text" class="form-control" placeholder="Address" ng-required="true" ng-maxlength="200">
+
+                <div class="text-danger" ng-messages="form.address.$error" ng-show="form.address.$dirty">
+                    <p ng-message="maxlength">Maximum length exceeded.</p>
+                    <p ng-message="required">Address is required.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" ui-sref="app.customers.list">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

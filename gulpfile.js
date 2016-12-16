@@ -14,6 +14,9 @@ var source = {
     // Include module declarations before services/controllers etc.
     'public/**/module.js',
 
+    // Include module declarations before services/controllers etc.
+    'public/**/*.model.js',
+
     // Everything else
     'public/**/*.js',
 
@@ -26,7 +29,9 @@ var source = {
     'bower_components/bootstrap/dist/bootstrap.js',
     'bower_components/bootstrap/js/collapse.js',
     'bower_components/angular/angular.js',
-    'bower_components/angular-ui-router/release/angular-ui-router.js'
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/angular-ui-mask/dist/mask.js',
+    'bower_components/angular-messages/angular-messages.js'    
   ]
 }
 
