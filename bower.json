@@ -1,0 +1,19 @@
+{
+  "name": "customers-app",
+  "description": "Webapp to save and search customer info.",
+  "main": "index.js",
+  "authors": [
+    "Ryan Langman <hraffnir@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "angularjs#^1.6.0",
+    "angular-ui-router": "ui-router#^0.3.2",
+    "jQuery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular-messages": "ng-messages#*",
+    "angular-ui-mask": "^1.8.7"
+  }
+}
