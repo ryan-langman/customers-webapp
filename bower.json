@@ -18,6 +18,11 @@
     "angular-sanitize": "^1.6.0",
     "angular-bootstrap": "^2.3.1",
     "angular-ui-notification": "^0.2.0",
-    "ngToast": "ngtoast#^2.0.0"
+    "ngToast": "ngtoast#^2.0.0",
+    "angular-bootstrap-confirm": "^2.5.0"
+  },
+  "resolutions": {
+    "angular-sanitize": "^1.6.0",
+    "angular": "1.6.0"
   }
 }
