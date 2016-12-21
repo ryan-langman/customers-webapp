@@ -18,6 +18,18 @@ router.get('/', function(req, res){
 
 app.use('/api', router);
 
+router.route('/customers/stats')
+  .get(function(req, res){
+    var now = new Date();
+    var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    Customer.find({created: {$gte: startOfToday}}, function(err, customers){
+      if(err){ res.send(err); }
+
+      res.json(customers.length);
+    });
+  });
+
 router.route('/customers')
   .post(function(req, res){
     var customer = new Customer();
@@ -25,7 +37,7 @@ router.route('/customers')
     customer.firstName = req.body.firstName;
     customer.surname = req.body.surname;
     customer.address = req.body.address;
-    customer.phone = req.body.phone;
+    customer.contactNumber = req.body.contactNumber;
     customer.email = req.body.email;
     customer.idNumber = req.body.idNumber;
     
@@ -67,11 +79,11 @@ router.route('/customers/:customer_id')
   .put(function(req, res){
     Customer.findById(req.params.customer_id, function(err, customer){
       if(err){ res.send(err); }
-
+      
         customer.firstName = req.body.firstName;
         customer.surname = req.body.surname;
         customer.address = req.body.address;
-        customer.phone = req.body.phone;
+        customer.contactNumber = req.body.contactNumber;
         customer.email = req.body.email;
         customer.idNumber = req.body.idNumber;
         customer.modified = new Date().toISOString();

@@ -1,7 +1,7 @@
 <div class="col-xs-12">
     <h3 class="text-center">Please fill in a customer's details.</h4>
 
-    <form name="form" class="form-horizontal" ng-submit="form.$invalid || saveUser()">
+    <form name="form" class="form-horizontal" ng-submit="form.$invalid || save()">
         <div class="form-group">
             <label class="control-label col-md-2">First Name</label>
             <div class="col-md-10">
@@ -53,12 +53,13 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Phone Number</label>
+            <label class="control-label col-md-2">Contact Number</label>
             <div class="col-md-10">
-                <input ng-model="customer.phoneNumber" ui-mask="999-999-9999" name="phoneNumber" type="text" class="form-control" ng-required="true">
+                <input ng-model="customer.contactNumber" ui-mask="999-999-9999" name="contactNumber" type="text" class="form-control" ng-required="true" ng-minlength="10">
 
-                <div class="text-danger" ng-messages="form.phoneNumber.$error" ng-show="form.phoneNumber.$dirty">
-                    <p ng-message="required">Phone Number is required.</p>
+                <div class="text-danger" ng-messages="form.contactNumber.$error" ng-show="form.contactNumber.$dirty">
+                    <p ng-message="minlength">A valid contact number is required.</p>
+                    <p ng-message="required">Contact Number is required.</p>
                 </div>
             </div>
         </div>

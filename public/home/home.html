@@ -1,1 +1,10 @@
-<h1>Ollah! {{test}}</h1>
+<div class="well text-center" style="margin-top: 10px;">
+    <h2 style="margin-top: 0;">Welcome to the Customers App</h2>
+
+    <p ng-if="customersToday == 0">
+        No new customers have been added today. Why not <a ui-sref="app.customers.add">ADD</a> one now?
+    </p>
+    <p ng-if="customersToday > 0">
+        {{customersToday}} have been added today. View them <a ui-sref="app.customers.list">HERE</a>.
+    </p>
+</div>

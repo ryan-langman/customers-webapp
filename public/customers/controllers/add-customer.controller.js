@@ -1,7 +1,25 @@
-angular.module('customersApp.customers').controller('AddCustomerController', function($scope){
+angular.module('customersApp.customers').controller('AddCustomerController', function($scope, $state, CustomerService, ngToast){
     $scope.customer = {};
 
-    $scope.create = function(){
-        console.log('Create customer.');
+    $scope.save = function(){
+        for(var i = 0; i < 100; i++){
+            CustomerService.create($scope.customer).then(function(result){
+            // $state.go('app.customers.list');
+        });
+        }
+        CustomerService.create($scope.customer)
+            .then(function(result){
+                ngToast.create({
+                    className: 'success',
+                    content: 'Customer: ' + $scope.customer.firstName + ' ' + $scope.customer.surname + ' saved.'
+                });
+                $state.go('app.customers.list');
+            })
+            .catch(function(){
+                ngToast.create({
+                    className: 'warning',
+                    content: 'Problem saving customer. Please try again.'
+                });
+            });
     };
 });

@@ -6,7 +6,7 @@ var CustomerSchema = new Schema({
     surname: String,
     idNumber: Number,
     email: String,
-    phone: Number,
+    contactNumber: Number,
     address: String,
     created: { type: Date, default: Date.now },
     modified: { type: Date, default: null }

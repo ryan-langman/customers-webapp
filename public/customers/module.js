@@ -13,7 +13,14 @@ angular.module('customersApp.customers', ['ui.router']).config(function($statePr
         .state('app.customers.list', {
             url: '/list',
             templateUrl: 'customers/views/list-customers.html',
-            controller: 'ListCustomersController'
+            controller: 'ListCustomersController',
+            resolve: {
+                customers: function(CustomerService){
+                    return CustomerService.getAll().then(function(result){
+                        return result.data
+                    });
+                }
+            }
         })
         .state('app.customers.add', {
             url: '/add',
@@ -23,7 +30,14 @@ angular.module('customersApp.customers', ['ui.router']).config(function($statePr
         .state('app.customers.view', {
             url: '/view/:customer_id',
             templateUrl: 'customers/views/customer.html',
-            controller: 'ViewCustomerController'
+            controller: 'ViewCustomerController',
+            resolve: {
+                customer: function(CustomerService, $stateParams){
+                    return CustomerService.get($stateParams.customer_id).then(function(result){
+                        return result.data;
+                    });
+                }
+            }
         });
 
 });

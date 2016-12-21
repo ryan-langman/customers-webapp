@@ -6,7 +6,14 @@ angular.module('customersApp.home', ['ui.router']).config(function($stateProvide
             views: {
                 content: {
                     templateUrl: 'home/home.html',
-                    controller: 'HomeController'
+                    controller: 'HomeController',
+                    resolve: {
+                        customersToday: function(CustomerService){
+                            return CustomerService.getTodaysCount().then(function(result){
+                                return result.data;
+                            });
+                        }
+                    }
                 }
             }
         })
