@@ -9,11 +9,15 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "angular": "angularjs#^1.6.0",
-    "angular-ui-router": "ui-router#^0.3.2",
+    "angular": "1.6.0",
+    "angular-ui-router": "0.3.2",
     "jQuery": "^3.1.1",
     "bootstrap": "^3.3.7",
     "angular-messages": "ng-messages#*",
-    "angular-ui-mask": "^1.8.7"
+    "angular-ui-mask": "^1.8.7",
+    "angular-sanitize": "^1.6.0",
+    "angular-bootstrap": "^2.3.1",
+    "angular-ui-notification": "^0.2.0",
+    "ngToast": "ngtoast#^2.0.0"
   }
 }

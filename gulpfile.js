@@ -27,8 +27,12 @@ var source = {
     'bower_components/bootstrap/js/collapse.js',
     'bower_components/angular/angular.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
     'bower_components/angular-ui-mask/dist/mask.js',
-    'bower_components/angular-messages/angular-messages.js'    
+    'bower_components/angular-bootstrap-confirm/dist/angular-bootstrap-confirm.js',
+    'bower_components/angular-messages/angular-messages.js',
+    'bower_components/angular-sanitize/angular-sanitize.js',
+    'bower_components/ngToast/dist/ngToast.js'
   ]
 }
 

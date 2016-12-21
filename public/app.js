@@ -4,9 +4,13 @@ $(function () {
 
 angular.module('customersApp', [
     'ngMessages',
+    'ngSanitize',
 
     'ui.router',
     'ui.mask',
+    'ui.bootstrap',
+    'ngToast',
+    'mwl.confirm',
 
     'customersApp.home',
     'customersApp.customers'

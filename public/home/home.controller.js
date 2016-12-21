@@ -1,3 +1,3 @@
-angular.module('customersApp.home').controller('HomeController', function(){
-    console.log('Hello from home controller.');
+angular.module('customersApp.home').controller('HomeController', function($scope, customersToday){
+    $scope.customersToday = customersToday;
 });
