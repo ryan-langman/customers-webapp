@@ -7,23 +7,26 @@
     <div ng-if="customers.length > 0">
         <h3 class="text-center">Existing Customers</h3>
 
-        <div class="form-group">
-            <button type="button" class="btn btn-default" ui-sref="app.customers.add">Add</button>
-        </div>
-
-        <div class="text-center" ng-show="paginator.numPages > 1">       
-            <ul uib-pagination 
-                ng-change="pageCustomers()" 
-                rotate="true" 
-                boundary-links="true" 
-                max-size="5" 
-                total-items="customers.length" 
-                ng-model="paginator.currentPage" 
-                items-per-page="paginator.itemsPerPage" 
-                num-pages="paginator.numPages"></ul>
-        </div>
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
+                <tr>
+                    <th colspan="6">
+                        <div class="navbar-form no-padding" style="margin: 0;">
+                            <div class="input-group">
+                                <input ng-model="customerFilter" class="form-control" type="text">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="">Search</button>
+                                    <button type="button" class="btn btn-default" ng-click="customerFilter = ''">Clear</button>
+                                </span>
+                            </div>
+                            <div class="form-group pull-right">
+                                <button type="button" class="btn btn-default pull-right" ui-sref="app.customers.add">Add</button>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <thead ng-show="paginator.filtered.length > 0">
                 <tr>
                     <th>ID Number</th>
                     <th>Full Name</th>
@@ -34,7 +37,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="customer in pagedCustomers">
+                <tr ng-show="paginator.filtered.length == 0">
+                    <td colspan="6">
+                        <h4 class="text-center">No customers found.</h4>
+                    </td>
+                </tr>
+                <tr ng-show="paginator.filtered.length > 0" ng-repeat="customer in paginator.filtered = (customers | filter : customerFilter) | startFrom : (paginator.currentPage - 1) * paginator.itemsPerPage | limitTo : 10">
                     <td>{{customer.idNumber}} - {{customer._id}}</td>
                     <td>{{customer.firstName}} {{customer.surname}}</td>
                     <td>{{customer.email}}</td>
@@ -57,18 +65,24 @@
                     </td>
                 </tr>
             </tbody>
+            <tfoot ng-show="paginator.numPages > 1">
+                <tr>
+                    <td colspan="6">
+                        <ul class="pull-right"
+                            style="margin: 0;"
+                            uib-pagination 
+                            ng-change="pageCustomers()" 
+                            rotate="true" 
+                            boundary-links="true" 
+                            max-size="5" 
+                            total-items="paginator.filtered.length" 
+                            ng-model="paginator.currentPage" 
+                            items-per-page="paginator.itemsPerPage" 
+                            num-pages="paginator.numPages"></ul>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
-        <div class="text-center" ng-show="paginator.numPages > 1">       
-            <ul uib-pagination 
-                ng-change="pageCustomers()" 
-                rotate="true" 
-                boundary-links="true" 
-                max-size="5" 
-                total-items="customers.length" 
-                ng-model="paginator.currentPage" 
-                items-per-page="paginator.itemsPerPage" 
-                num-pages="paginator.numPages"></ul>
-        </div>
     </div>
 
 </div>

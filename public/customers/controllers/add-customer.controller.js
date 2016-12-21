@@ -2,11 +2,6 @@ angular.module('customersApp.customers').controller('AddCustomerController', fun
     $scope.customer = {};
 
     $scope.save = function(){
-        for(var i = 0; i < 100; i++){
-            CustomerService.create($scope.customer).then(function(result){
-            // $state.go('app.customers.list');
-        });
-        }
         CustomerService.create($scope.customer)
             .then(function(result){
                 ngToast.create({
